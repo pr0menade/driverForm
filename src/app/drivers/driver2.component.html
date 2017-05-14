@@ -1,0 +1,83 @@
+<form class="driver-form">
+    <md-input-container class="cell-full-width">
+        <input mdInput placeholder="Type (disabled)" disabled value="Drivers card">
+    </md-input-container>
+
+    <table class="cell-full-width" cellspacing="0"><tr>
+        <td><img src="http://placehold.it/130x130"></td>
+        <td><md-input-container class="cell-full-width">
+            <input mdInput placeholder="Surname" required>
+        </md-input-container></td>
+        <td><md-input-container class="cell-full-width">
+            <input mdInput placeholder="First name" required>
+        </md-input-container></td>
+        <td><md-input-container class="cell-full-width">
+            <input mdInput placeholder="Patronymic">
+        </md-input-container></td>
+    </tr>
+    <tr>
+        <td colspan="2">...</td>
+        <td><md-input-container class="cell-full-width">
+            <input mdInput type="date" placeholder="Date of birth" required>
+        </md-input-container></td>
+        <td>
+            <md-radio-group class="cell-full-width">
+                <md-radio-button value="male" checked>Male</md-radio-button>
+                <md-radio-button value="female">Female</md-radio-button>
+            </md-radio-group>
+        </td>
+    </tr>
+    </table>
+
+    <md-tab-group>
+        <md-tab label="Personal data">
+            <div class="tab-block">
+            <table class="cell-full-width" cellspacing="1"><tr>
+                <td width="20%"><md-input-container>
+                    <input mdInput #passportSeries placeholder="passport Series">
+                    <md-hint align="end">{{passportSeries.value.length}} / 2</md-hint>
+                </md-input-container></td>
+                <td width="20%"><md-input-container>
+                    <input mdInput #passportId placeholder="passport ID">
+                    <md-hint align="end">{{passportId.value.length}} / 6</md-hint>
+                </md-input-container></td>
+                <td width="25%"><md-input-container class="cell-full-width">
+                    <input mdInput type="date" placeholder="Date of issue">
+                </md-input-container></td>
+                <td width="35%"><md-input-container class="cell-full-width">
+                    <input mdInput placeholder="Passport issued by">
+                </md-input-container></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <md-input-container class="cell-full-width">
+                        <textarea mdInput placeholder="Residence registration">61000 Lenina Ave</textarea>
+                    </md-input-container>
+                </td>
+                <td colspan="2">
+                    <md-input-container class="cell-full-width">
+                        <textarea mdInput placeholder="Address"></textarea>
+                    </md-input-container>
+                </td>
+            </tr>
+            </table>
+                <p>
+                    <md-input-container class="cell-full-width">
+                        <input mdInput type="tel" placeholder="phone">
+                    </md-input-container>
+
+                    <button class="app-icon-button" (click)="phone.add()">
+                        <i class="material-icons">add_box</i>
+                    </button>
+                </p>
+
+            </div>
+        </md-tab>
+        <md-tab label="Cars">
+            <p>Info about cars</p>
+             <br>
+        </md-tab>
+    </md-tab-group>
+
+</form>
+
