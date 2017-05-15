@@ -53,7 +53,7 @@ export class DriverComponent implements OnInit{
 
     buildPhones():FormGroup {
         return this.fb.group({
-            phone: ['', [Validators.required]]
+            phone: ['', [Validators.required, Validators.pattern('/[0-9]+/')]]
         })
     }
 
@@ -74,7 +74,6 @@ export class DriverComponent implements OnInit{
     }
 
 /*
- driver: Driver= new Driver();
 
     constructor(private driversService: DriversService) { }
 
