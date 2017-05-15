@@ -19,27 +19,27 @@ export class DriversService {
             .map((res:any) => res.json());
     }
 
-    getDriver(id){
+    getDriver(id:any){
         return this.http.get(this.getDriverUrl(id))
             .map((res:any) => res.json());
     }
 
-    addDriver(driver){
+    addDriver(driver: any){
         return this.http.post(this.url, JSON.stringify(driver))
             .map((res:any) => res.json());
     }
 
-    updateDriver(driver){
+    updateDriver(driver: any){
         return this.http.put(this.getDriverUrl(driver.id), JSON.stringify(driver))
             .map((res:any) => res.json());
     }
 
-    deleteDriver(id){
+    deleteDriver(id: any){
         return this.http.delete(this.getDriverUrl(id))
             .map((res:any) => res.json());
     }
 
-    private getDriverUrl(id){
+    private getDriverUrl(id: any){
         return this.url + "/" + id;
     }
 }

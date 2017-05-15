@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder} from '@angular/forms';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {MdDialog, MdDialogRef} from '@angular/material';
 
 /*
@@ -24,13 +24,20 @@ export class DriverComponent implements OnInit{
 
     ngOnInit():void{
         this.driverForm = this.fb.group({
-            lastName: '',
-            firstName: '',
-            patronymic: '',
+            lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
+            firstName: ['', [Validators.required, Validators.minLength(3)]],
+            patronymic: ['', Validators.minLength(3)],
             dateofbirth: '',
-            gender: 'male'
-
-        });
+            gender: 'male',
+            passport: this.fb.group({
+                series: ['', [Validators.minLength(2), Validators.maxLength(2)]],
+                passportN: ['', [Validators.minLength(6), Validators.maxLength(6)]],
+                dateofissue: '',
+                bywhom: ['', Validators.maxLength(200)]
+            }),
+            address1: ['', Validators.maxLength(300)],
+            address2: ['', Validators.maxLength(300)]
+    });
 
 
     }

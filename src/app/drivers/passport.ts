@@ -1,6 +1,6 @@
 export class UserPassport {
     series: string;
-    number: string;
-    date: string;
+    passportN: string;
+    dateofissue: string;
     bywhom: string;
 }
