@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import {FormGroup, FormBuilder, Validators, FormArray} from '@angular/forms';
 import {MdDialog, MdDialogRef} from '@angular/material';
 
 /*
@@ -20,6 +20,11 @@ export class DriverComponent implements OnInit{
     driverForm: FormGroup;
     driver: Driver[] =[];
 
+    get phones(): FormArray{
+        return <FormArray>this.driverForm.get('phones');
+    }
+
+
     constructor(private fb: FormBuilder){}
 
     ngOnInit():void{
@@ -36,11 +41,22 @@ export class DriverComponent implements OnInit{
                 bywhom: ['', Validators.maxLength(200)]
             }),
             address1: ['', Validators.maxLength(300)],
-            address2: ['', Validators.maxLength(300)]
+            address2: ['', Validators.maxLength(300)],
+            phones: this.fb.array([this.buildPhones()])
     });
 
-
     }
+
+    addPhones(): void {
+        this.phones.push(this.buildPhones());
+    }
+
+    buildPhones():FormGroup {
+        return this.fb.group({
+            phone: ['', [Validators.required]]
+        })
+    }
+
     save() {
         console.log(this.driverForm);
         console.log('Saved: ' + JSON.stringify(this.driverForm.value));
@@ -50,7 +66,7 @@ export class DriverComponent implements OnInit{
         this.driverForm.patchValue({
             firstName: 'Kristina',
             lastName: 'Ivanova',
-            patronymic: 'Vladimirovna',
+            patronymic: 'Igorevna',
             dateofbirth: '1987-07-09',
             gender: 'female'
 
@@ -67,9 +83,6 @@ export class DriverComponent implements OnInit{
             .subscribe(data => this.drivers = data);
     }
 
-    save(driverForm: NgForm) {
-        console.log(driverForm.form);
-        console.log('Saved: ' + JSON.stringify(driverForm.value));
-    }*/
+   */
 }
 

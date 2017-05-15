@@ -74,17 +74,20 @@
                         </td>
                     </tr>
             </table>
+                <div formArrayName="phones" *ngFor="let phone of phones.controls; let i=index">
+                    <div [formGroupName]="i">
+                        <p>
+                            <md-input-container>
+                                <input mdInput type="tel"  formControlName="phone" placeholder="phone" required>
+                                <md-error>Please enter correct phone number</md-error>
+                            </md-input-container>
 
-                <p>
-                    <md-input-container>
-                        <input mdInput type="tel" placeholder="phone">
-                    </md-input-container>
-
-                    <button class="app-icon-button" (click)="addPhone()">
-                        <i class="material-icons" color="accent">add_box</i>
-                    </button>
-                </p>
-
+                            <button md-button class="app-icon-button" (click)="addPhones()">
+                                <md-icon>add_box</md-icon>
+                            </button>
+                        </p>
+                    </div>
+                </div>
             </div>
         </md-tab>
         <md-tab label="Cars">
@@ -97,8 +100,8 @@
 
 
           <button md-raised-button type="button" (click)="populateTestData()">Test Data</button>
-
-            <br> {{driverForm.dirty}}
+            <br>
+            <br>
             <br>{{driverForm.value | json}}
             <br>
 </md-card>
