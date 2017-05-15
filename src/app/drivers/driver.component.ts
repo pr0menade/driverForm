@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, FormBuilder} from '@angular/forms';
+import {FormGroup, FormBuilder} from '@angular/forms';
 import {MdDialog, MdDialogRef} from '@angular/material';
 
 /*
@@ -20,16 +20,19 @@ export class DriverComponent implements OnInit{
     driverForm: FormGroup;
     driver: Driver[] =[];
 
-    ngOnInit():void{
-        this.driverForm = new FormGroup({
-            lastName: new FormControl(),
-            firstName: new FormControl(),
-            patronymic: new FormControl(),
-            dateofbirth: new FormControl(),
-            gender: new FormControl('male')
+    constructor(private fb: FormBuilder){}
 
+    ngOnInit():void{
+        this.driverForm = this.fb.group({
+            lastName: '',
+            firstName: '',
+            patronymic: '',
+            dateofbirth: '',
+            gender: 'male'
 
         });
+
+
     }
     save() {
         console.log(this.driverForm);
