@@ -10,7 +10,6 @@ import {MdDialog, MdDialogConfig, MdDialogRef} from '@angular/material';
 })
 
 export class AppComponent  {
-    name = 'Angular';
     dialogRef: MdDialogRef<DriverDialog>;
 
     constructor(
@@ -37,7 +36,7 @@ export class AppComponent  {
     template: `
     <add-driver></add-driver>
     <button md-raised-button color="accent" type="button" (click)="dialogRef.close('no')">Cancel</button>
-    <button md-raised-button color="primary" type="button" (click)="dialogRef.close('yes')">Save</button>
+    <button md-raised-button color="primary" type="button" (click)="dialogRef.close('yes')">OK</button>
   `
 })
 export class DriverDialog {

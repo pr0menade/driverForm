@@ -1,17 +1,17 @@
+import {UserPassport} from './passport';
+
 export class Driver {
 
-    constructor(public firstName = '',
+    constructor(
+                public id: number,
+                public firstName = '',
                 public lastName = '',
                 public patronymic ='',
                 public dateofbirth = '',
                 public photo ='',
-                public sex ='',
-                public passportseries = '',
-                public passportnumber = '',
-                public passportdate = '',
-                public passportbywhom = '',
-                public addressType = 'home',
-                public street1?: string,
-                public street2?: string,
+                public gender ='',
+                public passport: UserPassport = new UserPassport(),
+                public address1?: string,
+                public address2?: string,
                 public phone?: string) { }
 }

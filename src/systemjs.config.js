@@ -23,9 +23,9 @@
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
       '@angular/material': 'npm:@angular/material/bundles/material.umd.js',
-      '@angular/animations': 'node_modules/@angular/animations/bundles/animations.umd.min.js',
-      '@angular/animations/browser':'node_modules/@angular/animations/bundles/animations-browser.umd.js',
-      '@angular/platform-browser/animations': 'node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js',
+      '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.min.js',
+      '@angular/animations/browser':'npm:@angular/animations/bundles/animations-browser.umd.js',
+      '@angular/platform-browser/animations': 'npm:@angular/platform-browser/bundles/platform-browser-animations.umd.js',
       'hammerjs': 'npm:hammerjs/hammer.js',
 
       // other libraries
